@@ -24,16 +24,16 @@ const tmp = [
 ];
 
 export const Transactions = () => {
-    const [expenses, setExpenses] = useState([]);
+    const [allTransactions, setAllTransactions] = useState([]);
 
-    useEffect(() => {
-        if (expenses.length > 0) return;
-        setExpenses(tmp);
-    }, [expenses]);
+    // useEffect(() => {
+    //     if (allTransactions.length > 0) return;
+    //     setAllTransactions(tmp);
+    // }, [allTransactions]);
 
     return (
         <>
-            <CreateTransaction expenses={expenses} setExpenses={setExpenses} />
+            <CreateTransaction allTransactions={allTransactions} setAllTransactions={setAllTransactions} />
             <div className="container-fluid">
                 <div className="row lead py-3">
                     <div className="col">Expenses</div>
@@ -58,8 +58,8 @@ export const Transactions = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {expenses.map((expense, index) => (
-                                    <Transaction key={index} index={index + 1} {...expense} />
+                                {allTransactions.map((expense, index) => (
+                                    <Transaction key={index} index={index + 1} {...expense} allTransactions={allTransactions} setAllTransactions={setAllTransactions} />
                                 ))}
                             </tbody>
                         </table>
