@@ -1,4 +1,4 @@
-import { Expenses } from "../expenses";
+import { Transactions } from "../transactions";
 import { Header } from "../header";
 import { SideBar } from "../sidebar";
 
@@ -9,11 +9,11 @@ export const Container = () => {
             <div className="flex-grow-1">
                 <div className="container-fluid h-100">
                     <div className="row h-100">
-                        <div className="col-3 p-0">
+                        <div className="col-2 p-0">
                             <SideBar />
                         </div>
-                        <div className="col-9">
-                            <Expenses />
+                        <div className="col-10">
+                            <Transactions />
                         </div>
                     </div>
                 </div>
