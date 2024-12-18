@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export const CreateTransaction = ({ expenses, setExpenses }) => {
     const [title, setTitle] = useState("");
@@ -24,6 +25,8 @@ export const CreateTransaction = ({ expenses, setExpenses }) => {
 
     const saveAndRegister = () => {
         // save to db
+        const id = uuidv4()
+        console.log(id)
         setExpenses([
             ...expenses,
             {
@@ -34,6 +37,7 @@ export const CreateTransaction = ({ expenses, setExpenses }) => {
                 category,
                 description,
                 attachments,
+                id
             },
         ]);
     };
